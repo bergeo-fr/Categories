@@ -17,7 +17,29 @@ Download the package and install it in your PyroCMS instance.
 ##Developpers
 Just theses few lines of code in your detail.php
 
-    git clone --recursive git@github.com:<username>/gitflow.git
+    //Load the library 
+    $this->load->library('categories/categories_lib');
+    //get some data
+    $setup = $this->categories_lib->setup_new_category_field("blog_test_cat");
+    
+    //now create your category field for your stream
+     $field = array(
+                'name'              => 'lang:namespace:fields:field_slug',
+                'slug'              => 'field_slug',
+                'namespace'         => 'namespace',
+                'type'              => 'categories_nested_list_relationship',
+                'extra'             => array(
+                    'nested_list_stream' => $setup['id'],
+                    'instance_id' => $setup['instance_id'], 
+                    'allow_disabled' => 0),
+                
+                'assign'            => 'stream_slug',
+                'title_column'      => true,
+                'required'          => true,
+                'unique'            => false
+            );
+            $this->streams->fields->add_field($field);
+
     
 
 
