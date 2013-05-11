@@ -14,7 +14,7 @@ Download the package and install it in your PyroCMS instance.
 
 #How to use it 
 
-##Developpers
+##How to add a category field in a Stream ?
 Just theses few lines of code in your detail.php
 
     //Load the library 
@@ -40,6 +40,16 @@ Just theses few lines of code in your detail.php
             );
             $this->streams->fields->add_field($field);
 
-    
+##How to add a category menu in my module ?
+
+You need to load the library in info() method in the detail.php
+    $this->load->library('categories/categories_lib');
+and get the url of your instance by calling this method : (NB the name in the parameter is the name used when you create the field
+
+     'sections'  => array(
+                'categories' => array(
+                    'name'  => 'Categories',
+                    'uri'   => $this->categories_lib->get_instance_manager_link('blog_test_cat'),
+                ),
 
 
