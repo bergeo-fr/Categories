@@ -6,7 +6,7 @@ Categories Manager for PyroCMS
 #Installation
 
 ##Required
-Download and install the nested field relationship.
+Download and install the nested field relationship : https://github.com/bergeo-fr/categories_nested_list_relationship
 
 ##Installation 
 Download the package and install it in your PyroCMS instance.
