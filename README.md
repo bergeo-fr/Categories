@@ -16,5 +16,8 @@ Download the package and install it in your PyroCMS instance.
 
 ##Developpers
 Just theses few lines of code in your detail.php
+
     git clone --recursive git@github.com:<username>/gitflow.git
+    
+
 
