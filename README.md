@@ -55,4 +55,4 @@ and get the url of your instance by calling this method : (NB the name in the pa
 
 ##Thanks
 This module contains some snippets of code of Ryan Thompson's module, who allowed me to use it. 
-But go have a look on his awesome modules. 
+I strongly recommend you to have a look on his modules.
