@@ -40,6 +40,11 @@ Just theses few lines of code in your detail.php
             );
             $this->streams->fields->add_field($field);
 
+##How to delete a category instance from a module?
+Call delete_instance_by_title() method in uninstall() method.
+    // delete the instance for category.
+    $this->categories_lib->delete_instance_by_title('<title>');
+    
 ##How to add a category menu in my module ?
 
 You need to load the library in info() method in the detail.php
