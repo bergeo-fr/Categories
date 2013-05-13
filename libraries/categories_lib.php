@@ -57,7 +57,27 @@ class Categories_lib
     {
         $this->ci->db->where('title',$instance_name);
         $row = $this->ci->db->get('categories_instances')->row();
+        if($row == null) return false;
         return site_url('admin/categories/instances/manage_categories_for_instance/'.$row->id);
+    }
+    
+    public function delete_instance_by_title($instance_name = false)
+    {
+        if($instance_name != false)
+        {
+            $row = $this->ci->db->where('title', $instance_name)->get('categories_instances')->row();
+            $this->ci->load->model('categories/categories_m');
+            $this->ci->load->model('categories/instances_m');
+            // delete all categories.
+            $this->ci->categories_m->delete_categories_by_instance($row->id);
+            // delete the instance 
+            $this->ci->instances_m->delete($row->id);
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 
     /**
